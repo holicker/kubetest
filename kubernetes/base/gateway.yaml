@@ -28,6 +28,6 @@ spec:
             prefix: /
       route:
         - destination:
-            host: front
+            host: vendor
             port:
               number: 80
