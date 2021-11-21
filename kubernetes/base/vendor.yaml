@@ -18,8 +18,5 @@ spec:
           image: holicer0601/vendor:0.2
           ports:
             - containerPort: 80
-          resources:
-            limits:
-              memory: 350Mi
 
 
