@@ -34,7 +34,6 @@ spec:
     metadata:
       labels:
         app: vendor
-        version: latest
     spec:
       serviceAccountName: streetvendor-vendor
       containers:
