@@ -1,0 +1,17 @@
+server.port: 8080
+server.error.include-message: always
+
+spring.application.name: vendor
+
+spring.jpa.hibernate.ddl-auto: update
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://spreadmat.cuk7svtxbl15.ap-northeast-2.rds.amazonaws.com:3306/test
+    username: hudon
+    password: rh2112us
+
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"
+
