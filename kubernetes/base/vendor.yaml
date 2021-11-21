@@ -11,13 +11,6 @@ spec:
   ports:
     - port: 80
 ---
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: streetvendor-vendor
-  labels:
-    account: vendor
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -32,7 +25,6 @@ spec:
       labels:
         app: vendor
     spec:
-      serviceAccountName: streetvendor-vendor
       containers:
         - name: vendor
           image: holicer0601/vendor:0.2
