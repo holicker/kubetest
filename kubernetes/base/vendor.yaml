@@ -6,12 +6,11 @@ metadata:
     app: vendor
     service: vendor
 spec:
-  selector:
-    app: vendor
   ports:
     - port: 80
       name: http
-      targetPort: 80
+  selector:
+    app: vendor
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -23,25 +22,29 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vendor
+  name: vendor-v1
+  labels:
+    app: vendor
+    version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: vendor
+      version: v1
   template:
     metadata:
       labels:
         app: vendor
+        version: v1
     spec:
       serviceAccountName: streetvendor-vendor
       containers:
         - name: vendor
-          image: holicker0601/vendor:0.1
+          image: holicker0601/vendor:0.2
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 80
+            - containerPort: 9080
           resources:
             limits:
               memory: 350Mi
-
