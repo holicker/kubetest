@@ -25,7 +25,7 @@ spec:
   http:
     - match:
         - uri:
-            exact: /vendor
+            prefix: /vendor
       route:
         - destination:
             host: vendor
