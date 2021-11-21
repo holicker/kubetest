@@ -35,7 +35,7 @@ spec:
       serviceAccountName: streetvendor-vendor
       containers:
         - name: vendor
-          image: holicer0601/vendor:0.1
+          image: holicer0601/vendor:0.2
           ports:
             - containerPort: 80
           resources:
