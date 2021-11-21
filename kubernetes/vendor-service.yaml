@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: vendor-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: vendor-app
   ports:
-    - targetPort: 80
-      port: 80
-      nodePort: 30080
+    - targetPort: 8080
+      port: 8080
+
