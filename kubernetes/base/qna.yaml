@@ -35,7 +35,8 @@ spec:
       serviceAccountName: streetvendor-qna
       containers:
         - name: qna
-          image: holicer0601/qna:0.0
+          image: holicker0601/qna:0.0
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           resources:

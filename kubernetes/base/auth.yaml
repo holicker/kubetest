@@ -35,7 +35,8 @@ spec:
       serviceAccountName: streetvendor-auth
       containers:
         - name: auth
-          image: holicer0601/auth:0.0
+          image: holicker0601/auth:0.0
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           resources:
