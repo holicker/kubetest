@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vendor-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vendor-app
+  template:
+    metadata:
+      labels:
+        app: vendor-app
+    spec:
+      containers:
+      - name: vendor-container
+        image: holicker0601/vendor:latest
+        ports:
+        - containerPort: 80
