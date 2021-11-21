@@ -22,18 +22,21 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vendor
+  name: vendor-v1
   labels:
     app: vendor
+    version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: vendor
+      version: v1
   template:
     metadata:
       labels:
         app: vendor
+        version: v1
     spec:
       serviceAccountName: streetvendor-vendor
       containers:

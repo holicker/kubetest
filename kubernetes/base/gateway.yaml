@@ -25,9 +25,9 @@ spec:
   http:
     - match:
         - uri:
-            prefix: /vendor
+            prefix: /
       route:
         - destination:
-            host: vendor
+            host: front
             port:
               number: 80
