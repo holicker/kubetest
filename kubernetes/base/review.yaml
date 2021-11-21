@@ -36,7 +36,6 @@ spec:
       containers:
         - name: review
           image: holicer0601/review:0.0
-          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
           resources:
