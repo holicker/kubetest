@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: qna
+  labels:
+    app: qna
+    service: qna
+spec:
+  selector:
+    app: qna
+  ports:
+    - port: 80
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: streetvendor-qna
+  labels:
+    account: qna
+---
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: qna
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qna
+  template:
+    metadata:
+      labels:
+        app: qna
+    spec:
+      serviceAccountName: streetvendor-qna
+      containers:
+        - name: qna
+          image: holicer0601/qna:0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: 350Mi
+

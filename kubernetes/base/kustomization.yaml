@@ -1,0 +1,9 @@
+resources:
+  - auth.yml
+  - chat.yml
+  - vendor.yml
+  - qna.yml
+  - review.yml
+  - notice.yml
+  - gateway.yml
+  - front.yml

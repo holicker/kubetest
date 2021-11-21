@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth
+  labels:
+    app: auth
+    service: auth
+spec:
+  selector:
+    app: auth
+  ports:
+    - port: 80
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: streetvendor-auth
+  labels:
+    account: auth
+---
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      serviceAccountName: streetvendor-auth
+      containers:
+        - name: auth
+          image: holicer0601/auth:0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: 350Mi
+

@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chat
+  labels:
+    app: chat
+    service: chat
+spec:
+  selector:
+    app: chat
+  ports:
+    - port: 80
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: streetvendor-chat
+  labels:
+    account: chat
+---
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: chat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat
+  template:
+    metadata:
+      labels:
+        app: chat
+    spec:
+      serviceAccountName: streetvendor-chat
+      containers:
+        - name: chat
+          image: holicer0601/chat:0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: 350Mi
+

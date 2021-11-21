@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: front
+  labels:
+    app: front
+    service: front
+spec:
+  selector:
+    app: front
+  ports:
+    - port: 80
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: streetvendor-front
+  labels:
+    account: front
+---
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front
+  template:
+    metadata:
+      labels:
+        app: front
+    spec:
+      serviceAccountName: streetvendor-front
+      containers:
+        - name: front
+          image: holicer0601/front:0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: 350Mi
+

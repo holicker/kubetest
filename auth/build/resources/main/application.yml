@@ -1,4 +1,4 @@
-server.port: 9999
+server.port: 80
 
 spring.application.name: auth
 
@@ -7,32 +7,9 @@ spring.jpa.hibernate.ddl-auto: create
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://spreadmat.cuk7svtxbl15.ap-northeast-2.rds.amazonaws.com:3306/test
-    username: hudon
+    url: jdbc:mariadb://kubernetes.cuk7svtxbl15.ap-northeast-2.rds.amazonaws.com:3306/test
+    username: admin
     password: rh2112us
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-    initialInstanceInfoReplicationIntervalSeconds: 5
-    registryFetchIntervalSeconds: 5
-    reigster-with-eureka: true
-  instance:
-    leaseRenewalIntervalInSeconds: 5
-    leaseExpirationDurationInSeconds: 5
-
-ribbon.ServerListRefreshInterval: 5000
-ribbon.NFLoadBalancerPingInterval: 5
 
 management.endpoint.health.show-details: "ALWAYS"
 management.endpoints.web.exposure.include: "*"
-
----
-
-spring.profiles: docker
-
-server.port: 8080
-
-eureka.client.serviceUrl.defaultZone: http://eureka:8761/eureka/
-

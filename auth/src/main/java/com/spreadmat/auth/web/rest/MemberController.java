@@ -1,6 +1,5 @@
 package com.spreadmat.auth.web.rest;
 
-import com.netflix.ribbon.proxy.annotation.Http;
 import com.spreadmat.auth.domain.User;
 import com.spreadmat.auth.service.MemberService;
 import com.spreadmat.auth.web.rest.dto.UserDTO;

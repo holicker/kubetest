@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vendor
+  labels:
+    app: vendor
+    service: vendor
+spec:
+  selector:
+    app: vendor
+  ports:
+    - port: 80
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: streetvendor-vendor
+  labels:
+    account: vendor
+---
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: vendor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vendor
+  template:
+    metadata:
+      labels:
+        app: vendor
+    spec:
+      serviceAccountName: streetvendor-vendor
+      containers:
+        - name: vendor
+          image: holicer0601/vendor:0.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: 350Mi
+
