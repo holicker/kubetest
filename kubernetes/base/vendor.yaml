@@ -22,21 +22,19 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vendor-v1
+  name: vendor
   labels:
     app: vendor
-    version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: vendor
-      version: v1
   template:
     metadata:
       labels:
         app: vendor
-        version: v1
+        version: latest
     spec:
       serviceAccountName: streetvendor-vendor
       containers:
@@ -44,7 +42,7 @@ spec:
           image: holicker0601/vendor:0.2
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 9080
+            - containerPort: 80
           resources:
             limits:
               memory: 350Mi
