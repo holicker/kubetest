@@ -10,6 +10,8 @@ spec:
     app: vendor
   ports:
     - port: 80
+      name: http
+      targetPort: 80
 ---
 apiVersion: v1
 kind: ServiceAccount
