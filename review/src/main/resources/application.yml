@@ -9,8 +9,8 @@ spring.jpa.hibernate.ddl-auto: update
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://spreadmat.cuk7svtxbl15.ap-northeast-2.rds.amazonaws.com:3306/test
-    username: hudon
+    url: jdbc:mariadb://kubernetes.cuk7svtxbl15.ap-northeast-2.rds.amazonaws.com:3306/test
+    username: admin
     password: rh2112us
 
 eureka:

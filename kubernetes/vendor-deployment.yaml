@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: vendor-container
-        image: holicker0601/vendor:0.0
+        image: holicker0601/vendor:0.1
         ports:
         - containerPort: 8080
