@@ -1,4 +1,10 @@
-import client from "./client";
+import axios from "axios";
+
+
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.baseURL = `${process.env.REACT_APP_CHAT}`;
+const chat_client = axios.create();
 
 export const checkChat = ({
   merchandiseid,
@@ -6,17 +12,17 @@ export const checkChat = ({
   buyerid,
   vendordomain,
 }) =>
-  client.post(`${process.env.CHAT}/chatroom/check`, {
+  chat_client.post(`/chatroom/check`, {
     buyerId: buyerid,
     merchandiseId: merchandiseid,
     buyerNickname: buyernickname,
     vendorDomain: vendordomain,
   });
 
-export const infoChat = (roomid) => client.get(`${process.env.CHAT}/chatroom/room/${roomid}`);
+export const infoChat = (roomid) => chat_client.get(`/chatroom/room/${roomid}`);
 
 export const listChatBuyer = ({ id }) =>
-  client.get(`${process.env.CHAT}/chatroom/buyerlist/${id}`);
+  chat_client.get(`/chatroom/buyerlist/${id}`);
 
 export const listChatSeller = ({ id }) =>
-  client.get(`${process.env.CHAT}/chatroom/sellerlist/${id}`);
+  chat_client.get(`/chatroom/sellerlist/${id}`);

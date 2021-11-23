@@ -1,4 +1,10 @@
-import client from "./client";
+import axios from "axios";
+
+
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.baseURL = `${process.env.REACT_APP_VENDOR}`;
+const vendor_client = axios.create();
 
 export const registerVendor = (formData) => {
   const config = {
@@ -7,19 +13,19 @@ export const registerVendor = (formData) => {
     },
   };
   console.log(formData);
-  return client.post(`${process.env.VENDOR}/vendor/create`, formData, config); // 이렇게 된 경우에는 return을 꼭 넣어줘야 한다!!
+  return vendor_client.post(`/vendor/create`, formData, config); // 이렇게 된 경우에는 return을 꼭 넣어줘야 한다!!
 };
 
 export const getByVendorid = (vendorid) => {
-  return client.get(`${process.env.VENDOR}/vendor/info/${vendorid}`);
+  return vendor_client.get(`/vendor/info/${vendorid}`);
 };
 
 export const getByVendordomain = (domain) => {
-  return client.get(`${process.env.VENDOR}/vendor/infobydomain/${domain}`);
+  return vendor_client.get(`/vendor/infobydomain/${domain}`);
 };
 
 export const getByUserid = (userid) => {
-  return client.get(`${process.env.VENDOR}/vendor/info/@${userid}`);
+  return vendor_client.get(`/vendor/info/@${userid}`);
 };
 
-export const listVendor = () => client.get(`${process.env.VENDOR}/vendor/list`);
+export const listVendor = () => vendor_client.get(`/vendor/list`);

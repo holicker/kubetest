@@ -44,7 +44,7 @@ const MerchandisePopupSlickCarousel = ({ type, images }) => {
             <MerchandisePopupSlickCarouselItem key={image.id}>
               {type === "merchandise" && (
                 <Image
-                  src={`${process.env.VENDOR}/vendor/${type}image/${image.id}`}
+                  src={`${process.env.REACT_APP_VENDOR}/vendor/${type}image/${image.id}`}
                 />
               )}
             </MerchandisePopupSlickCarouselItem>

@@ -44,12 +44,12 @@ const SlickCarousel = ({ type, images }) => {
             <SlickCarouselItem key={image.id}>
               {type === "vendor" && (
                 <Image
-                  src={`${process.env.VENDOR}/${type}/image/${image.id}`}
+                  src={`${process.env.REACT_APP_VENDOR}/${type}/image/${image.id}`}
                 />
               )}
               {type === "merchandise" && (
                 <Image
-                  src={`${process.env.VENDOR}/vendor/${type}image/${image.id}`}
+                  src={`${process.env.REACT_APP_VENDOR}/vendor/${type}image/${image.id}`}
                 />
               )}
             </SlickCarouselItem>

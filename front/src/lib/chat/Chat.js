@@ -16,7 +16,7 @@ class Chat extends React.Component {
   constructor(props) {
     super(props);
     // randomUserId is used to emulate a unique user id for this demo usage
-    this.sendURL = `${process.env.CHAT}/message`;
+    this.sendURL = `${process.env.REACT_APP_CHAT}/message`;
     this.state = {
       clientConnected: false,
       messages: [],
@@ -47,7 +47,7 @@ class Chat extends React.Component {
         message: selfMsg.message,
         chattedTime: null,
       };
-      this.clientRef.sendMessage(`${process.env.CHAT}/app/message`, JSON.stringify(send_message));
+      this.clientRef.sendMessage(`${process.env.REACT_APP_CHAT}/app/message`, JSON.stringify(send_message));
       return true;
     } catch (e) {
       return false;
@@ -55,7 +55,7 @@ class Chat extends React.Component {
   };
 
   componentWillMount() {
-    Fetch(`${process.env.CHAT}/history/${this.roomid}`, {
+    Fetch(`${process.env.REACT_APP_CHAT}/history/${this.roomid}`, {
       method: "GET",
     }).then((response) => {
       console.log(`response : ${JSON.stringify(response.body)}`);
@@ -69,7 +69,7 @@ class Chat extends React.Component {
   }
 
   render() {
-    const wsSourceUrl = `${process.env.CHAT}/chatting`;
+    const wsSourceUrl = `${process.env.REACT_APP_CHAT}/chatting`;
     return (
       <ChatPageBlock>
         <TalkBox
