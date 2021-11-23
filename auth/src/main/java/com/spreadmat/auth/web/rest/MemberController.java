@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @RequestMapping(path = "member", produces = "application/json")
+@CrossOrigin(origins = {"http://ae4c6f9f00c0f407297acb4d7542f902-304088184.ap-northeast-2.elb.amazonaws.com", "http://10.40.182.13:3000"})
 public class MemberController {
 
     @Autowired private MemberService memberService;
