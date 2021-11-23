@@ -15,7 +15,7 @@ public class UserDTO {
     private String username;
     private String password;
     private String nickname;
-    private String id;
+    private Long id;
 
     public UserDTO passwordEncrypt(PasswordEncoder passwordEncoder){
         this.password = "{bcrypt}" + passwordEncoder.encode(this.password);

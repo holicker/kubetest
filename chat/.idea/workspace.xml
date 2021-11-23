@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c701d95-f489-4655-a331-1e65c8e14a1c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../kubernetes/base/auth.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../kubernetes/base/auth.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kubernetes/base/chat.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../kubernetes/base/chat.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kubernetes/base/front.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../kubernetes/base/front.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kubernetes/base/notice.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../kubernetes/base/notice.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kubernetes/base/qna.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../kubernetes/base/qna.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kubernetes/base/review.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../kubernetes/base/review.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kubernetes/base/vendor.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../kubernetes/base/vendor.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/src/main/java/com/spreadmat/auth/web/rest/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth/src/main/java/com/spreadmat/auth/web/rest/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/lib/api/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/lib/api/vendor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
