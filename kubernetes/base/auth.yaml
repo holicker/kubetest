@@ -43,7 +43,7 @@ spec:
       serviceAccountName: streetvendor-auth
       containers:
         - name: auth
-          image: holicker0601/auth:0.3
+          image: holicker0601/auth:0.2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
