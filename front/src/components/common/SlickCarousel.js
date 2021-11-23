@@ -44,12 +44,12 @@ const SlickCarousel = ({ type, images }) => {
             <SlickCarouselItem key={image.id}>
               {type === "vendor" && (
                 <Image
-                  src={`https://localhost:8443/${type}/image/${image.id}`}
+                  src={`https://a411d570b6ec54034b20d92883abbb27-457135104.ap-northeast-2.elb.amazonaws.com/${type}/image/${image.id}`}
                 />
               )}
               {type === "merchandise" && (
                 <Image
-                  src={`https://localhost:8443/vendor/${type}image/${image.id}`}
+                  src={`https://a411d570b6ec54034b20d92883abbb27-457135104.ap-northeast-2.elb.amazonaws.com/vendor/${type}image/${image.id}`}
                 />
               )}
             </SlickCarouselItem>

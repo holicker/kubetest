@@ -16,7 +16,7 @@ class Chat extends React.Component {
   constructor(props) {
     super(props);
     // randomUserId is used to emulate a unique user id for this demo usage
-    this.sendURL = "/message";
+    this.sendURL = "http://ac06b71d8fb3a4cf6acc2a2557e98d86-1967271677.ap-northeast-2.elb.amazonaws.com/message";
     this.state = {
       clientConnected: false,
       messages: [],
@@ -47,7 +47,7 @@ class Chat extends React.Component {
         message: selfMsg.message,
         chattedTime: null,
       };
-      this.clientRef.sendMessage("/app/message", JSON.stringify(send_message));
+      this.clientRef.sendMessage("http://ac06b71d8fb3a4cf6acc2a2557e98d86-1967271677.ap-northeast-2.elb.amazonaws.com/app/message", JSON.stringify(send_message));
       return true;
     } catch (e) {
       return false;
@@ -55,7 +55,7 @@ class Chat extends React.Component {
   };
 
   componentWillMount() {
-    Fetch(`/history/${this.roomid}`, {
+    Fetch(`http://ac06b71d8fb3a4cf6acc2a2557e98d86-1967271677.ap-northeast-2.elb.amazonaws.com/history/${this.roomid}`, {
       method: "GET",
     }).then((response) => {
       console.log(`response : ${JSON.stringify(response.body)}`);
@@ -69,7 +69,7 @@ class Chat extends React.Component {
   }
 
   render() {
-    const wsSourceUrl = "https://localhost:8443/chatting";
+    const wsSourceUrl = "http://ac06b71d8fb3a4cf6acc2a2557e98d86-1967271677.ap-northeast-2.elb.amazonaws.com/chatting";
     return (
       <ChatPageBlock>
         <TalkBox
