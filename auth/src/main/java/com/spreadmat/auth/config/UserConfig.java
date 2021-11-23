@@ -58,8 +58,7 @@ class UserConfig extends WebSecurityConfigurerAdapter {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // - (3)
-        configuration.addAllowedOrigin("http://10.40.182.13:3000");
-        configuration.addAllowedOrigin("http://ae4c6f9f00c0f407297acb4d7542f902-304088184.ap-northeast-2.elb.amazonaws.com");
+        configuration.addAllowedOrigin("*");
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");
         configuration.setAllowCredentials(true);
