@@ -33,6 +33,7 @@ spec:
   selector:
     app: kafka
     id: "0"
+  type: LoadBalancer
 ---
 kind: Deployment
 apiVersion: apps/v1
