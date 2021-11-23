@@ -47,4 +47,4 @@ spec:
             - name: KAFKA_BROKER_ID
               value: "0"
             - name: KAFKA_CREATE_TOPICS
-              value: kafka-chatting:1:1
+              value: kafka-chatting:2:2
