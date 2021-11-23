@@ -36,7 +36,10 @@ kind: Service
 metadata:
   name: kafka
 spec:
+  ports:
+    - port: 80
+      targetPort: 9092
+      name: http
   selector:
     app: kafka
-  ports:
-    - port: 9092
+  type: LoadBalancer

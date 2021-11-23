@@ -30,7 +30,10 @@ kind: Service
 metadata:
   name: zookeeper
 spec:
+  ports:
+    - port: 80
+      targetPort: 2181
+      name: http
   selector:
     app: zookeeper
-  ports:
-    - port: 2181
+  type: LoadBalancer
