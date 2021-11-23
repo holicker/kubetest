@@ -1,6 +1,6 @@
 resources:
   - auth.yaml
-  - chat-grpc.yaml
+  - chat.yaml
   - vendor.yaml
   - qna.yaml
   - review.yaml
