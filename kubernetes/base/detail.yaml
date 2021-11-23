@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: detail-service
+  labels:
+    app: detail
+    service: detail
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      name: http
+  selector:
+    app: detail
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: streetvendor-detail
+  labels:
+    account: detail
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: detail-v1
+  labels:
+    app: detail
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: detail
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: detail
+        version: v1
+    spec:
+      serviceAccountName: streetvendor-detail
+      containers:
+        - name: detail
+          image: holicker0601/detail:0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: 350Mi
