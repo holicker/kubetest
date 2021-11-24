@@ -45,7 +45,7 @@ spec:
       serviceAccountName: streetvendor-chat
       containers:
         - name: chat
-          image: holicker0601/chat:0.5
+          image: holicker0601/chat:0.6
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
