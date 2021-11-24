@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: review-go-service
+  labels:
+    app: review-go
+    service: review-go
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      name: http
+  selector:
+    app: review-go
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: streetvendor-review-go
+  labels:
+    account: review-go
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: review-go-v1
+  labels:
+    app: review-go
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: review-go
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: review-go
+        version: v1
+    spec:
+      serviceAccountName: streetvendor-review-go
+      containers:
+        - name: review-go
+          image: holicker0601/review-go:0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: 350Mi
