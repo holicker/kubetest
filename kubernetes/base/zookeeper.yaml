@@ -1,39 +1,24 @@
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
-  name: zookeeper
+  name: zookeeper-deployment-1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: zookeeper
+      app: zookeeper-1
   template:
     metadata:
       labels:
-        app: zookeeper
+        app: zookeeper-1
     spec:
       containers:
-        - name: zookeeper
+        - name: zoo1
           image: wurstmeister/zookeeper:3.4.6
-          env:
-            - name: KAFKA_ADVERTISED_HOST_NAME
-              value: zookeeper
           ports:
             - containerPort: 2181
-          resources:
-            limits:
-              memory: 350Mi
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: zookeeper
-spec:
-  ports:
-    - port: 80
-      targetPort: 2181
-      name: http
-  selector:
-    app: zookeeper
-  type: LoadBalancer
+          env:
+            - name: ZOOKEEPER_ID
+              value: "1"
+            - name: ZOOKEEPER_SERVER_1
+              value: zoo1
