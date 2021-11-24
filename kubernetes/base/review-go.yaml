@@ -43,7 +43,7 @@ spec:
       serviceAccountName: streetvendor-review-go
       containers:
         - name: review-go
-          image: holicker0601/review-go:0.1
+          image: holicker0601/review-go:0.2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
