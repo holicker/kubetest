@@ -2,6 +2,9 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: streetvendor-gateway
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:ap-northeast-2:068149769006:certificate/dde95b2e-4ad3-4a67-8759-a81896270272
 spec:
   selector:
     istio: ingressgateway # use istio default controller
@@ -12,10 +15,12 @@ spec:
         protocol: HTTP
       hosts:
         - "*"
+      tls:
+        httpsRedirect: true
     - port:
         number: 443
-        name: grpc-tls
-        protocol: GRPC
+        name: https
+        protocol: HTTPS
       hosts:
         - "*"
 ---
