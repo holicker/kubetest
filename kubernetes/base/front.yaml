@@ -5,15 +5,9 @@ metadata:
   labels:
     app: front
     service: front
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:ap-northeast-2:068149769006:certificate/dde95b2e-4ad3-4a67-8759-a81896270272
-    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
-    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
-    service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "3600"
 spec:
   ports:
-    - port: 443
-      targetPort: 3000
+    - port: 3000
       name: http
   selector:
     app: front
@@ -47,7 +41,7 @@ spec:
       serviceAccountName: streetvendor-front
       containers:
         - name: front
-          image: holicker0601/front:0.3
+          image: holicker0601/front:0.4
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
