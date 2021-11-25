@@ -17,7 +17,7 @@ spec:
     - port:
         number: 443
         name: https-443
-        protocol: HTTP
+        protocol: HTTPS
       hosts:
         - "*.streetvendor.co.kr"
 ---
