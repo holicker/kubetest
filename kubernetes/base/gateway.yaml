@@ -38,4 +38,4 @@ spec:
         - destination:
             host: front
             port:
-              number: 3000
+              number: 443
