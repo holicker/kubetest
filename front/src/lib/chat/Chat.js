@@ -47,7 +47,10 @@ class Chat extends React.Component {
         message: selfMsg.message,
         chattedTime: null,
       };
-      this.clientRef.sendMessage(`${process.env.REACT_APP_CHAT}/app/message`, JSON.stringify(send_message));
+      this.clientRef.sendMessage(
+        `${process.env.REACT_APP_CHAT}/message`,
+        JSON.stringify(send_message)
+      );
       return true;
     } catch (e) {
       return false;
