@@ -54,9 +54,9 @@ spec:
             limits:
               memory: 350Mi
           volumeMounts:
-            - name: ebs-volume
+            - name: ebs-volume-hdd
               mountPath: /images
       volumes:
-        - name: ebs-volume
+        - name: ebs-volume-hdd
           persistentVolumeClaim:
             claimName: ebs-pvc-hdd    # 3. my-ebs-pvc라는 이름의 pvc를 사용합니다.
