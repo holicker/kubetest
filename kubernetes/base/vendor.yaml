@@ -54,7 +54,7 @@ spec:
               memory: 350Mi
           volumeMounts:
             - name: ebs-volume
-              mountPath: /images
+              mountPath: "/images"
       volumes:
         - name: ebs-volume
           persistentVolumeClaim:
