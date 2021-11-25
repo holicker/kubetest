@@ -15,11 +15,10 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-      name: http
+      name: http2
     - port: 443
       targetPort: 443
-      name: grpc
-      appProtocol: grpc
+      name: http2
   selector:
     app: detail
   type: LoadBalancer
