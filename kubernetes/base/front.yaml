@@ -13,6 +13,7 @@ metadata:
 spec:
   ports:
     - port: 443
+      targetPort: 3000
       name: http
   selector:
     app: front
