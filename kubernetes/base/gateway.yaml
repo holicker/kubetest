@@ -11,7 +11,7 @@ spec:
         name: http
         protocol: HTTP
       hosts:
-        - "streetvendor.co.kr"
+        - "*"
       tls:
         httpsRedirect: true # sends 301 redirect for http requests
     - port:
@@ -19,7 +19,7 @@ spec:
         name: https-443
         protocol: HTTP
       hosts:
-        - "streetvendor.co.kr"
+        - "*"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
