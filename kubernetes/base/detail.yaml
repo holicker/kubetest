@@ -19,7 +19,7 @@ spec:
     - port: 443
       targetPort: 443
       name: grpc
-      protocl: TCP
+      protocol: TCP
   selector:
     app: detail
   type: LoadBalancer
