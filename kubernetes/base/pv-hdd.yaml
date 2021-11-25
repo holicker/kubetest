@@ -4,7 +4,7 @@ metadata:
   name: ebs-pv-hdd
 spec:
   capacity:
-    storage: 5Gi         # 이 볼륨의 크기는 5G입니다.
+    storage: 125Gi         # 이 볼륨의 크기는 5G입니다.
   accessModes:
     - ReadWriteOnce    # 하나의 포드 (또는 인스턴스) 에 의해서만 마운트 될 수 있습니다.
   awsElasticBlockStore:
@@ -23,4 +23,4 @@ spec:
     - ReadWriteOnce       # 2.1 속성이 ReadWriteOnce인 퍼시스턴트 볼륨과 연결합니다.
   resources:
     requests:
-      storage: 5Gi          # 2.2 볼륨 크기가 최소 5Gi인 퍼시스턴트 볼륨과 연결합니다.
+      storage: 125Gi          # 2.2 볼륨 크기가 최소 5Gi인 퍼시스턴트 볼륨과 연결합니다.

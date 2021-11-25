@@ -54,8 +54,8 @@ spec:
               memory: 350Mi
           volumeMounts:
             - name: ebs-volume
-              mountPath: /mnt/images
+              mountPath: /images
       volumes:
         - name: ebs-volume
           persistentVolumeClaim:
-            claimName: ebs-pvc    # 3. my-ebs-pvc라는 이름의 pvc를 사용합니다.
+            claimName: ebs-pvc-hdd   # 3. my-ebs-pvc라는 이름의 pvc를 사용합니다.
