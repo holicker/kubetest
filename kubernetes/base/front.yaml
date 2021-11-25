@@ -13,10 +13,8 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "3600"
 spec:
   ports:
-    - port: 80
-      targetPort: 3000
-      name: http
     - port: 443
+      targetPort: 3000
       name: https
   selector:
     app: front
