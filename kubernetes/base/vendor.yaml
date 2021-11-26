@@ -45,7 +45,7 @@ spec:
       serviceAccountName: streetvendor-vendor
       containers:
         - name: vendor
-          image: holicker0601/vendor:0.2
+          image: holicker0601/vendor:final
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -54,7 +54,7 @@ spec:
               memory: 350Mi
           env:
             - name: SPRING_CONFIG_LOCATION
-              value: file:/config/vendor.yaml
+              value: file:/config/vendor.yaml,file:/config/application.yaml
           envFrom:
             -secretRef:
               name: mysql-credentials
