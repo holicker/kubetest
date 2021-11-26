@@ -57,7 +57,7 @@ spec:
           value: file:/config/application.yaml,file:/config/vendor.yaml
         envFrom:
         - secretRef:
-          name: mysql-credentials
+            name: mysql-credentials
         volumeMounts:
         - name: ebs-volume
           mountPath: /images
