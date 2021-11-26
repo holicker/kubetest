@@ -52,10 +52,21 @@ spec:
           resources:
             limits:
               memory: 350Mi
+          env:
+            - name: SPRING_CONFIG_LOCATION
+              value: file:/config/vendor.yaml
+          envFrom:
+            -secretRef:
+              name: mysql-credentials
           volumeMounts:
             - name: ebs-volume
               mountPath: /images
+            - name: config-repo-volume
+              mountPath: /config
       volumes:
         - name: ebs-volume
           persistentVolumeClaim:
             claimName: ebs-pvc   # 3. my-ebs-pvc라는 이름의 pvc를 사용합니다.
+        - name: config-repo-volume
+          configMap:
+            name: config-repo-product
