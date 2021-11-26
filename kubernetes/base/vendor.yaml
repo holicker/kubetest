@@ -54,7 +54,7 @@ spec:
             memory: 350Mi
         env:
         - name: SPRING_CONFIG_LOCATION
-          value: file:/config/vendor.yaml,file:/config/application.yaml
+          value: file:/config/application.yaml,file:/config/product.yaml
         envFrom:
         - secretRef:
           name: mysql-credentials
