@@ -12,7 +12,7 @@ spring:
 management.endpoint.health.show-details: "ALWAYS"
 management.endpoints.web.exposure.include: "*"
 
-cros.hostname: http://www.streetvendor.co.kr
+cors.hostname: http://www.streetvendor.co.kr
 
 kafka.profiles: a2b7e106499ed4998a4daeb0b72f707c-3b65c853081f9fbe.elb.ap-northeast-2.amazonaws.com:9092
 
