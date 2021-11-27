@@ -54,7 +54,7 @@ spec:
             memory: 350Mi
         env:
         - name: SPRING_CONFIG_LOCATION
-          value: file:/config/application.yaml,file:/config/vendor.yaml
+          value: file:/config/application.yaml
         envFrom:
         - secretRef:
             name: mysql-credentials
@@ -69,4 +69,4 @@ spec:
           claimName: ebs-pvc   # 3. my-ebs-pvc라는 이름의 pvc를 사용합니다.
       - name: config-repo-volume
         configMap:
-          name: config-repo-product
+          name: config-repo

@@ -44,11 +44,24 @@ spec:
     spec:
       serviceAccountName: streetvendor-notice
       containers:
-        - name: notice
-          image: holicker0601/notice:0.0
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 80
-          resources:
-            limits:
-              memory: 350Mi
+      - name: notice
+        image: holicker0601/notice:final
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: 350Mi
+        env:
+        - name: SPRING_CONFIG_LOCATION
+          value: file:/config/application.yaml
+        envFrom:
+        - secretRef:
+            name: mysql-credentials
+        volumeMounts:
+        - name: config-repo-volume
+          mountPath: /config
+      volumes:
+      - name: config-repo-volume
+        configMap:
+          name: config-repo

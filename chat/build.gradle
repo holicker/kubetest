@@ -1,24 +1,41 @@
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.17'
+	}
+}
 plugins {
 	id 'org.springframework.boot' version '2.5.5'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
 
-group = 'com.spreadmat'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+apply plugin: 'com.google.protobuf'
+
+repositories {
+	mavenCentral()
+}
 
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
 }
-
-repositories {
-	mavenCentral()
-}
+group = 'com.spreadmat'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
 
 dependencies {
+
+	implementation 'io.grpc:grpc-stub:1.41.0'
+	implementation 'io.grpc:grpc-netty-shaded:1.41.0'
+	implementation 'io.grpc:grpc-protobuf:1.41.0'
+	implementation 'com.google.protobuf:protobuf-java:3.19.1'
+	implementation 'javax.annotation:javax.annotation-api:1.3.2'
+
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -26,8 +43,6 @@ dependencies {
 	implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
 	implementation 'org.springframework.cloud:spring-cloud-starter:3.0.4'
 	implementation 'org.springframework.cloud:spring-cloud-stream:3.1.5'
-	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.0.5'
-	implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer:3.0.4'
 
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -42,9 +57,40 @@ dependencies {
 	implementation 'org.springframework.kafka:spring-kafka'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 
-
 }
 
-test {
-	useJUnitPlatform()
+
+protobuf {
+	protoc {
+		artifact = 'com.google.protobuf:protoc:3.17.2'
+	}
+	plugins {
+		grpc {
+			artifact = "io.grpc:protoc-gen-grpc-java:1.41.0"
+		}
+	}
+	generateProtoTasks {
+		all()*.plugins {
+			grpc {}
+		}
+	}
 }
+
+
+sourceSets {
+	main {
+		java {
+			srcDirs 'build/generated/source/proto/main/grpc'
+			srcDirs 'build/generated/source/proto/main/java'
+		}
+	}
+}
+
+
+// Generate IntelliJ IDEA's .idea & .iml project files
+apply plugin: 'idea'
+
+// Provide convenience executables for trying out the examples.
+apply plugin: 'application'
+
+startScripts.enabled = false

@@ -44,11 +44,24 @@ spec:
     spec:
       serviceAccountName: streetvendor-review
       containers:
-        - name: review
-          image: holicker0601/review:0.0
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 80
-          resources:
-            limits:
-              memory: 350Mi
+      - name: review
+        image: holicker0601/review:final
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: 350Mi
+        env:
+        - name: SPRING_CONFIG_LOCATION
+          value: file:/config/application.yaml
+        envFrom:
+        - secretRef:
+            name: mysql-credentials
+        volumeMounts:
+        - name: config-repo-volume
+          mountPath: /config
+      volumes:
+      - name: config-repo-volume
+        configMap:
+          name: config-repo
