@@ -50,7 +50,7 @@ spec:
       serviceAccountName: streetvendor-front
       containers:
         - name: front
-          image: holicker0601/front:0.9
+          image: holicker0601/front:1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
