@@ -13,7 +13,7 @@ spec:
       name: http
     - port: 443
       name: https
-      targetPort: 3000
+      targetPort: 443
   selector:
     app: front
   type: LoadBalancer
