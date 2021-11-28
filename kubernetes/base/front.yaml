@@ -50,14 +50,14 @@ spec:
               memory: 350Mi
           env:
             - name: REACT_APP_AUTH
-              value: auth
+              value: http://auth
             - name: REACT_APP_CHAT
-              value: chat-service
+              value: http://chat-service
             - name: REACT_APP_NOTICE
-              value: notice
+              value: http://notice
             - name: REACT_APP_REVIEW
-              value: review
+              value: http://review
             - name: REACT_APP_QNA
-              value: qna
+              value: http://qna
             - name: REACT_APP_VENDOR
-              value: vendor
+              value: http://vendor
