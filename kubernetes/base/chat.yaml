@@ -16,6 +16,8 @@ spec:
     - port: 80
       targetPort: 80
       name: http
+      tls:
+        httpsRedirect: true
     - port: 443
       targetPort: 80
       name: https
