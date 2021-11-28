@@ -21,10 +21,8 @@ const GlobalStyle = createGlobalStyle`
 	}
 `;
 
-const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(sagaMiddleware))
+  rootReducer
 );
 
 function loadUser() {
@@ -58,7 +56,6 @@ function loadUser() {
   }
 }
 
-sagaMiddleware.run(rootSaga);
 loadUser();
 
 ReactDOM.render(
