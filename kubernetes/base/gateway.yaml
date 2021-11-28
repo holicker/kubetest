@@ -86,7 +86,6 @@ spec:
             host: front
             port:
               number: 443
-      websocketUpgrade: true
 
 ---
 apiVersion: networking.istio.io/v1alpha3
