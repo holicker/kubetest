@@ -98,6 +98,21 @@ spec:
   gateways:
     - streetvendor-gateway
   http:
+    - headers:
+        request:
+          set:
+            Authorization: "Basic cmVhY3Q6c2VjcmV0"
+            Content-Type: "application/x-www-form-urlencoded"
+      match:
+        - uri:
+            exact: /app/auth/oauth/token
+      rewrite:
+        uri: /oauth/token
+      route:
+        - destination:
+            host: auth
+            port:
+              number: 80
     - match:
         - uri:
             prefix: /app/auth/
