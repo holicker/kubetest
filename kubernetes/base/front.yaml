@@ -60,6 +60,8 @@ spec:
             limits:
               memory: 350Mi
           env:
+            - name: PORT
+              value: 443
             - name: REACT_APP_AUTH
               value: https://www.streetvendor.co.kr/app/auth
             - name: REACT_APP_NOTICE
