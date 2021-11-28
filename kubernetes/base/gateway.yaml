@@ -79,10 +79,7 @@ spec:
             host: review
             port:
               number: 80
-    - match:
-        - uri:
-            prefix: /
-      route:
+    - route:
         - destination:
             host: front
             port:
