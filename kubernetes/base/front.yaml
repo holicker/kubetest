@@ -52,7 +52,7 @@ spec:
             - name: REACT_APP_AUTH
               value: https://www.streetvendor.co.kr/app/auth
             - name: REACT_APP_CHAT
-              value: https://www.streetvendor.co.kr/app/chat
+              value: http://aa603cc7696d144eb946eff6724e35aa-da8a0d177c9355f7.elb.ap-northeast-2.amazonaws.com
             - name: REACT_APP_NOTICE
               value: https://www.streetvendor.co.kr/app/notice
             - name: REACT_APP_REVIEW
