@@ -73,4 +73,4 @@ spec:
             - name: REACT_APP_CHAT
               value: https://api.streetvendor.co.kr/chat
             - name: REACT_APP_WEBSOCKET
-              value: https://api.streetvendor.co.kr/chat
+              value: https://wss.streetvendor.co.kr
