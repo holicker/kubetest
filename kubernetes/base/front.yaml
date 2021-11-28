@@ -41,7 +41,7 @@ spec:
       serviceAccountName: streetvendor-front
       containers:
         - name: front
-          image: holicker0601/front:0.8
+          image: holicker0601/front:0.9
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
@@ -61,3 +61,5 @@ spec:
               value: https://www.streetvendor.co.kr/app/qna
             - name: REACT_APP_VENDOR
               value: https://www.streetvendor.co.kr/app/vendor
+            - name: REACT_APP_WEBSCOKET
+              value: http://aa603cc7696d144eb946eff6724e35aa-da8a0d177c9355f7.elb.ap-northeast-2.amazonaws.com
