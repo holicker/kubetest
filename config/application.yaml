@@ -14,8 +14,8 @@ management.endpoints.web.exposure.include: "*"
 
 cors.hostname: http://www.streetvendor.co.kr
 
-kafka.profiles: a2b7e106499ed4998a4daeb0b72f707c-3b65c853081f9fbe.elb.ap-northeast-2.amazonaws.com:9092
+kafka.profiles: kafka-service:9092
 
 grpc:
-  hostname: a2dd29ca6353b45859b5614f8c205e6e-088ad62baf50cc98.elb.ap-northeast-2.amazonaws.com
+  hostname: detail-service
   port: 7000

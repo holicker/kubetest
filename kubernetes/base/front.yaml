@@ -41,10 +41,23 @@ spec:
       serviceAccountName: streetvendor-front
       containers:
         - name: front
-          image: holicker0601/front:0.7
+          image: holicker0601/front:0.8
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
           resources:
             limits:
               memory: 350Mi
+          env:
+            - name: REACT_APP_AUTH
+              value: auth
+            - name: REACT_APP_CHAT
+              value: chat-service
+            - name: REACT_APP_NOTICE
+              value: notice
+            - name: REACT_APP_REVIEW
+              value: review
+            - name: REACT_APP_QNA
+              value: qna
+            - name: REACT_APP_VENDOR
+              value: vendor
