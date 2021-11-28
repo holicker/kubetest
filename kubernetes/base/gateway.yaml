@@ -11,7 +11,7 @@ spec:
         name: http
         protocol: HTTP
       hosts:
-        - "*.streetvendor.co.kr"
+        - "www.streetvendor.co.kr"
       tls:
         httpsRedirect: true
     - port:
@@ -19,7 +19,7 @@ spec:
         name: https
         protocol: HTTP
       hosts:
-        - "*.streetvendor.co.kr"
+        - "www.streetvendor.co.kr"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
