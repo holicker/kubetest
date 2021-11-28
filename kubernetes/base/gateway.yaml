@@ -33,7 +33,7 @@ spec:
   http:
     - match:
         - uri:
-            prefix: /app/vendor/
+            prefix: /vendor/
       rewrite:
         uri: /
       route:
@@ -43,7 +43,7 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /app/chat/
+            prefix: /chat/
       rewrite:
         uri: /
       route:
@@ -53,7 +53,7 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /app/notice/
+            prefix: /notice/
       rewrite:
         uri: /
       route:
@@ -63,7 +63,7 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /app/qna/
+            prefix: /qna/
       rewrite:
         uri: /
       route:
@@ -73,7 +73,7 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /app/review/
+            prefix: /review/
       rewrite:
         uri: /
       route:
@@ -81,11 +81,6 @@ spec:
             host: review
             port:
               number: 80
-    - route:
-        - destination:
-            host: front
-            port:
-              number: 443
 
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -105,7 +100,7 @@ spec:
             Content-Type: "application/x-www-form-urlencoded"
       match:
         - uri:
-            exact: /app/auth/oauth/token
+            exact: /auth/oauth/token
       rewrite:
         uri: /oauth/token
       route:
@@ -115,7 +110,7 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /app/auth/
+            prefix: /auth/
       rewrite:
         uri: /
       route:
