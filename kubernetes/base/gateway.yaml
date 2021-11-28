@@ -33,7 +33,7 @@ spec:
   http:
     - match:
         - uri:
-            prefix: /app/vendor
+            prefix: /app/vendor/
       rewrite:
         uri: /
       route:
@@ -43,7 +43,7 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /app/chat
+            prefix: /app/chat/
       rewrite:
         uri: /
       route:
@@ -53,7 +53,7 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /app/notice
+            prefix: /app/notice/
       rewrite:
         uri: /
       route:
@@ -63,7 +63,7 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /app/qna
+            prefix: /app/qna/
       rewrite:
         uri: /
       route:
@@ -73,7 +73,7 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /app/review
+            prefix: /app/review/
       rewrite:
         uri: /
       route:
