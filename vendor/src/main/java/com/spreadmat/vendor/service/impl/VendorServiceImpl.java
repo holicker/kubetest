@@ -122,6 +122,13 @@ public class VendorServiceImpl implements VendorService {
         return merchandiseRepository.findById(id);
 
     }
+
+    @Override
+    public Page<Merchandise> searchMerchandise(Pageable pageable, String keyword) {
+        Page<Merchandise> searchlist = merchandiseRepository.findByMerchandiseNameContainingIgnoreCaseOrMerchandiseDescriptionContainingIgnoreCase(pageable, keyword, keyword);
+        return searchlist;
+    }
+
     @Override
     public void deleteAll(){vendorRepository.deleteAll();};
 

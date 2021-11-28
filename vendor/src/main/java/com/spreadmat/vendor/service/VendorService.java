@@ -60,5 +60,7 @@ public interface VendorService {
 
     Optional<Merchandise> findOneMerchandise(Long id);
 
+    Page<Merchandise> searchMerchandise(Pageable pageable, String keyword);
+
 
 }

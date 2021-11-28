@@ -11,6 +11,10 @@ import com.spreadmat.vendor.web.rest.mapper.VendorMapper;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -42,6 +46,12 @@ public class VendorController {
         Vendor vendor = new Vendor();
         vendor = vendorService.saveWithImage(vendor, files);
         return ResponseEntity.ok(vendorService.save(vendor));
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<Page<Merchandise>> searchMerchandise(@PageableDefault(size=10, sort = "id", direction = Sort.Direction.DESC) Pageable pageRequest, @RequestParam("keyword") String keyword){
+        Page<Merchandise> list = vendorService.searchMerchandise(pageRequest, keyword);
+    return ResponseEntity.ok(list);
     }
 
     @PostMapping("/imagecomeon")

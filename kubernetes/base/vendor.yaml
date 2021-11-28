@@ -45,7 +45,7 @@ spec:
       serviceAccountName: streetvendor-vendor
       containers:
       - name: vendor
-        image: holicker0601/vendor:final
+        image: holicker0601/vendor:0.3
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
