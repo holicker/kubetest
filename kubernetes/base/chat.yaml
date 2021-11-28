@@ -4,6 +4,10 @@ metadata:
   name: chat-service
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:ap-northeast-2:068149769006:certificate/7929495f-7537-4a58-a3a1-905c1abe33b2
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: https
+    service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "3600"
   labels:
     app: chat
     service: chat
@@ -12,6 +16,9 @@ spec:
     - port: 80
       targetPort: 80
       name: http
+    - port: 443
+      targetPort: 443
+      name: https
   selector:
     app: chat
   type: LoadBalancer

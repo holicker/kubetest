@@ -69,7 +69,7 @@ class Chat extends React.Component {
   }
 
   render() {
-    const wsSourceUrl = `wss://aa603cc7696d144eb946eff6724e35aa-da8a0d177c9355f7.elb.ap-northeast-2.amazonaws.com/chatting`;
+    const wsSourceUrl = `${process.env.REACT_APP_WEBSOCKET}/chatting`;
     return (
       <ChatPageBlock>
         <TalkBox
