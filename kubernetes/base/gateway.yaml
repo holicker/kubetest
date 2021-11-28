@@ -12,14 +12,6 @@ spec:
         protocol: HTTP
       hosts:
         - "www.streetvendor.co.kr"
-      tls:
-        httpsRedirect: true
-    - port:
-        number: 443
-        name: https
-        protocol: HTTP
-      hosts:
-        - "www.streetvendor.co.kr"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
