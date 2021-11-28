@@ -1,4 +1,3 @@
-import OpenColor from "open-color";
 import React from "react";
 import { Route } from "react-router";
 import styled from "styled-components";
@@ -39,8 +38,6 @@ const NoticePageItem = styled(BasicItem)`
     flex: 1;
   }
 `;
-
-const NoticeItemBlock = styled(BasicItem)``;
 
 const NoticePage = ({ match }) => {
   return (

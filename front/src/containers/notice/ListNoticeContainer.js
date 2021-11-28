@@ -1,6 +1,6 @@
+import qs from "qs";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import qs from "qs";
 import { withRouter } from "react-router";
 import ListNotice from "../../components/notice/ListNotice";
 import { noticeList as list } from "../../modules/noticelist";

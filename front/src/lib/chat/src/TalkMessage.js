@@ -2,7 +2,6 @@ import OpenColor from "open-color";
 import PropTypes from "prop-types";
 import React from "react";
 import styled, { css } from "styled-components";
-const isBlank = require("is-blank");
 
 const TalkMessageBlock = styled.div`
   display: flex;

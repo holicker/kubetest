@@ -12,7 +12,6 @@ export const registerVendor = (formData) => {
       "Content-Type": "multipart/form-data",
     },
   };
-  console.log(formData);
   return vendor_client.post(`/vendor/create`, formData, config); // 이렇게 된 경우에는 return을 꼭 넣어줘야 한다!!
 };
 

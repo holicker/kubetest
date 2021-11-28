@@ -37,9 +37,9 @@ const MakeReviewActionButtonContainer = ({
     if (review) {
     }
     if (reviewError) {
-      console.log(reviewError);
     }
     return dispatch(initialize());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [review, reviewError, vendordomain]);
 
   return (

@@ -1,9 +1,9 @@
+import { takeLatest } from "@redux-saga/core/effects";
 import { createAction, handleActions } from "redux-actions";
-import createRequestSaga, {
-  createRequestActionTypes,
-} from "../lib/createRequestSaga";
 import * as chatAPI from "../lib/api/chat";
-import { take, takeLatest } from "@redux-saga/core/effects";
+import createRequestSaga, {
+  createRequestActionTypes
+} from "../lib/createRequestSaga";
 
 const INITIALIZE_CHAT = "chat/INITIALIZE_CHAT";
 const INITIALIZE_CHATLIST = "chat/INITIALIZE_CHATLIST";

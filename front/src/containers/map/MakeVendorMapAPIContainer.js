@@ -1,18 +1,16 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router";
 import NaverMapAPI from "../../lib/map/NaverMapAPI";
 import {
   changeVendorField,
   getByVendordomain,
-  listVendor,
+  listVendor
 } from "../../modules/vendor";
 
 const NaverMapAPIContainer = ({ match, history }) => {
   const dispatch = useDispatch();
-  const { vendorlng, vendorlat, vendorlist } = useSelector(({ vendor }) => ({
-    vendorlng: vendor.vendorlng,
-    vendorlat: vendor.vendorlat,
+  const {  vendorlist } = useSelector(({ vendor }) => ({
     vendorlist: vendor.vendorlist,
   }));
 

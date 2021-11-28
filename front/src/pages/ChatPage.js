@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import Chat from "../lib/chat/Chat";
-import { infoChat, initializeChat } from "../modules/chat";
-import user from "../modules/user";
+import { infoChat } from "../modules/chat";
 
 const ChatPageBlock = styled.div`
   display: flex;
@@ -22,6 +21,7 @@ const ChatPage = ({ match }) => {
 
   useEffect(() => {
     dispatch(infoChat(roomid));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   useEffect(() => {}, []);

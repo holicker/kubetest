@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router";
 import ListMerchandise from "../../components/merchandise/ListMerchandise";
-import merchandise, {
+import {
   readMerchandise,
-  unloadMerchandise,
+  unloadMerchandise
 } from "../../modules/merchandise";
 import { merchandiseList } from "../../modules/merchandiselist";
 const ListMerchandiseContainer = ({ history, match, writeToggle }) => {
@@ -25,7 +25,6 @@ const ListMerchandiseContainer = ({ history, match, writeToggle }) => {
 
   const onClickLink = (id) => {
     dispatch(readMerchandise(id));
-    console.log(`id : ${id}`);
     setModal(true);
   };
   const onClickClose = () => {

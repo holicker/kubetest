@@ -8,7 +8,6 @@ import randomstring from "randomstring";
 class ChatPage extends React.Component {
   constructor(props) {
     super(props);
-    console.log("생성자 통과 시작");
     // randomUserId is used to emulate a unique user id for this demo usage
     this.randomUserName = UsernameGenerator.generateUsername("-");
     this.randomUserId = randomstring.generate();
@@ -18,11 +17,9 @@ class ChatPage extends React.Component {
       messages: [],
     };
 
-    console.log("생성자 통과 끝");
   }
 
   onMessageReceive = (msg, topic) => {
-    console.log("메세지 리시브 시작");
     // alert(
     //   JSON.stringify(msg) +
     //     " @ " +
@@ -38,13 +35,9 @@ class ChatPage extends React.Component {
     this.setState((prevState) => ({
       messages: [...prevState.messages, convertedMsg],
     }));
-    console.log(`통과된 메세지 : ${JSON.stringify(msg)}`);
-    console.log("메세지 리시브 통과");
   };
 
   sendMessage = (msg, selfMsg) => {
-    console.log(`selfMsg : ${JSON.stringify(selfMsg)}`);
-    console.log("메세지 센드 시작");
     try {
       var send_message = {
         roomId: 3,
@@ -52,7 +45,6 @@ class ChatPage extends React.Component {
         message: selfMsg.message,
         timestamp: null,
       };
-      console.log(`send_massage ${JSON.stringify(send_message)}`);
       this.clientRef.sendMessage("/app/message", JSON.stringify(send_message));
       return true;
     } catch (e) {
@@ -65,14 +57,11 @@ class ChatPage extends React.Component {
   };
 
   componentWillMount() {
-    console.log("call history");
     Fetch("/history/3", {
       method: "GET",
     }).then((response) => {
-      console.log(`response : ${JSON.stringify(response.body)}`);
       const convertedBody = [];
       response.body.map((messages) => {
-        console.log(messages);
         let jsonMessage = {
           //roomId:messages.roomdId,
           author: messages.writer,
@@ -80,7 +69,6 @@ class ChatPage extends React.Component {
           timestamp: messages.chattedTime,
         };
         convertedBody.push(jsonMessage);
-        console.log(jsonMessage);
       });
       console.log(`convertedBody : ${JSON.stringify(convertedBody)}`);
       this.setState({ messages: convertedBody });
@@ -88,14 +76,11 @@ class ChatPage extends React.Component {
   }
 
   componentDidMount() {
-    console.log("Did mount 스크롤 아래로");
     this.scrollToBottom();
   }
 
   render() {
     const wsSourceUrl = "https://localhost:8443/chatting";
-    console.log(`현재 이름 ${this.randomUserName}`);
-    console.log(`현재 id ${this.randomUserId}`);
     return (
       <div
         ref={(el) => {

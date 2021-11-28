@@ -5,7 +5,6 @@ import { BasicDiv } from "../components/common/BasicDiv";
 import { BasicItem } from "../components/common/BasicItem";
 import Responsive from "../components/common/Responsive";
 import MakeVendorMapAPIContainer from "../containers/map/MakeVendorMapAPIContainer";
-import NaverMapAPIContainer from "../containers/map/NaverMapAPIContainer";
 import MakeVendorFormContainer from "../containers/vendor/MakeVendorFormContainer";
 const MakeVendorPageBlock = styled(BasicDiv)`
   margin: 0px 0px;

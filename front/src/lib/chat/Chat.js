@@ -58,14 +58,12 @@ class Chat extends React.Component {
     Fetch(`${process.env.REACT_APP_CHAT}/history/${this.roomid}`, {
       method: "GET",
     }).then((response) => {
-      console.log(`response : ${JSON.stringify(response.body)}`);
 
       this.setState({ messages: response.body });
     });
   }
 
   componentDidMount() {
-    console.log("Did mount 스크롤 아래로");
   }
 
   render() {

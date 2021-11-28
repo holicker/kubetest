@@ -1,7 +1,6 @@
 import OpenColor from "open-color";
 import React from "react";
 import styled from "styled-components";
-import BasicButton from "../components/common/BasicButton";
 import { BasicDiv } from "../components/common/BasicDiv";
 import { BasicItem } from "../components/common/BasicItem";
 import MakeQnaActionButtonContainer from "../containers/map/qna/MakeQnaActionButtonContainer";

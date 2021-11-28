@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { changeField, initializeForm, login } from "../../modules/auth";
 import AuthForm from "../../components/auth/AuthForm";
+import { changeField, initializeForm, login } from "../../modules/auth";
 import { check } from "../../modules/user";
 import { getByUserid } from "../../modules/vendor";
 
@@ -72,6 +72,7 @@ const LoginForm = ({ history }) => {
         console.log("LocalStorage is not working");
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [history, user]);
 
   useEffect(() => {
@@ -84,6 +85,7 @@ const LoginForm = ({ history }) => {
         console.log("LocalStorage is not working");
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [history, vendorid]);
 
   return (

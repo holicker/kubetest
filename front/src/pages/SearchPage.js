@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { BasicDiv } from "../components/common/BasicDiv";
-import { BasicItem } from "../components/common/BasicItem";
 import Responsive from "../components/common/Responsive";
 import ListMerchandiseSearchContainer from "../containers/search/ListMerchandiseSearchContainer";
 const SearchPageBlock = styled(BasicDiv)`
@@ -14,7 +13,6 @@ const SearchPageBlock = styled(BasicDiv)`
 
 const SearchPageWrapper = styled(Responsive)``;
 
-const SearchPageItem = styled(BasicItem)``;
 
 const SearchPage = ({ match }) => {
   return (

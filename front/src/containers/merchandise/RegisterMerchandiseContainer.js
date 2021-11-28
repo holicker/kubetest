@@ -23,9 +23,6 @@ const RegisterMerchandiseContainer = ({ history, match, writeToggle }) => {
 
   const onPublish = () => {
     const formData = new FormData();
-    console.log(`title : ${title}`);
-    console.log(`body : ${body}`);
-    console.log(`price : ${price}`);
     formData.append(
       "merchandise",
       new Blob([

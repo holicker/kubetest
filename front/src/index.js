@@ -21,13 +21,14 @@ const GlobalStyle = createGlobalStyle`
 	}
 `;
 
+const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
-  rootReducer
+  rootReducer,
+  applyMiddleware(sagaMiddleware)
 );
 
 function loadUser() {
   try {
-    console.log("loadUser() start");
     const user = localStorage.getItem("user");
     const id = localStorage.getItem("id");
     const access_token = localStorage.getItem("access_token");
@@ -52,10 +53,10 @@ function loadUser() {
     );
     store.dispatch(check({ access_token }));
   } catch (e) {
-    console.log("LocalStorage(index) is not working : loadUser()");
   }
 }
 
+sagaMiddleware.run(rootSaga);
 loadUser();
 
 ReactDOM.render(

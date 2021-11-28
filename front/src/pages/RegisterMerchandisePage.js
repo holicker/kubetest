@@ -1,8 +1,6 @@
-import OpenColor from "open-color";
 import React from "react";
 import styled from "styled-components";
 import { BasicDiv } from "../components/common/BasicDiv";
-import { BasicItem } from "../components/common/BasicItem";
 import RegisterMerchandiseContainer from "../containers/merchandise/RegisterMerchandiseContainer";
 
 const RegisterMerchandisePageBlock = styled(BasicDiv)`

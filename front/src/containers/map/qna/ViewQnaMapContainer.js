@@ -8,10 +8,7 @@ import { readQna, unloadQna } from "../../../modules/qna";
 import { setOriginalQna } from "../../../modules/write";
 
 const VeiwQnaMapContainer = ({ match, history }) => {
-  console.log(`View Qna Match : ${JSON.stringify(match)}`);
-  console.log(`View Qna Match : ${JSON.stringify(match.params)}`);
   const { qnaid : id } = match.params;
-  console.log(`View Qna id : ${id}`)
   const dispatch = useDispatch();
   const { qna, error, loading } = useSelector(({ qna, loading, user }) => ({
     qna: qna.qna,

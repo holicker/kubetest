@@ -26,6 +26,7 @@ const TransactionActionButtonContainer = ({ history }) => {
 
   useEffect(() => {
     roomid && history.push(`/chat/${roomid}`);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roomid]);
 
   return <TransactionActionButton askTransAction={askTransAction} />;

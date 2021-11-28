@@ -5,8 +5,7 @@ import MakeVendorForm from "../../components/vendor/MakeVendorForm";
 import {
   changeVendorField,
   initializeVendor,
-  registerVendor,
-  setImages,
+  registerVendor
 } from "../../modules/vendor";
 
 const MakeVendorFormContainer = ({ history, match }) => {
@@ -53,8 +52,6 @@ const MakeVendorFormContainer = ({ history, match }) => {
     );
     images &&
       Array.from(images).forEach((image) => formData.append("images", image));
-    console.log(formData);
-    console.log(`위의 것은 폼 데이터`);
     dispatch(registerVendor(formData));
   };
 
@@ -69,8 +66,6 @@ const MakeVendorFormContainer = ({ history, match }) => {
   );
 
   const onChangeImage = (image) => {
-    console.log(image);
-    console.log(`위의 것으로 이미지 셋팅 완료!`);
     setImages(image);
   };
 
@@ -90,6 +85,7 @@ const MakeVendorFormContainer = ({ history, match }) => {
     if (vendorError) {
       console.log(vendorError);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [history, vendorError, vendorid]);
 
   return (

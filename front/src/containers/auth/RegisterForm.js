@@ -6,16 +6,15 @@ import {
   changeField,
   initializeAuth,
   initializeForm,
-  register,
+  register
 } from "../../modules/auth";
 
 const RegisterForm = ({ history }) => {
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
-  const { form, auth, authError, authSuccess, user } = useSelector(
+  const { form, authError, authSuccess, user } = useSelector(
     ({ auth, user }) => ({
       form: auth.register,
-      auth: auth.auth,
       authError: auth.authError,
       authSuccess: auth.authSuccess,
       user: user.user,
@@ -78,7 +77,7 @@ const RegisterForm = ({ history }) => {
       history.push("/login");
       return dispatch(initializeAuth());
     }
-  }, [authSuccess, authError, dispatch]);
+  }, [authSuccess, authError, dispatch, history]);
 
   // user 값이 잘 설정되었는지 확인
   useEffect(() => {

@@ -3,12 +3,11 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router";
 import VendorMap from "../../components/map/VendorMap";
-import { qnalist } from "../../lib/api/qna";
 import {
   changeVendorField,
   getByVendordomain,
   initializeVendorListAndVisit,
-  listVendor,
+  listVendor
 } from "../../modules/vendor";
 import { initialize } from "../../modules/write";
 
@@ -17,23 +16,19 @@ const VendorMapContainer = ({ location, match }) => {
     userid,
     vendorid,
     vendor,
-    vendorlng,
-    vendorlat,
     vendorlist,
     reviewlist,
     qnalist,
   } = useSelector(({ user, vendor, reviewlist, qnalist }) => ({
     userid: user.id,
     vendorid: vendor.visit ? vendor.visit.id : null,
-    vendorlng: vendor.vendorlng,
-    vendorlat: vendor.vendorlat,
     vendorlist: vendor.vendorlist,
     vendor: vendor.visit,
     reviewlist: reviewlist.reviewlist,
     qnalist: qnalist.qnalist,
   }));
 
-  let { page, merchandise, qna, review } = qs.parse(location.search, {
+  let { page } = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
   const { domain } = match.params;
@@ -41,7 +36,9 @@ const VendorMapContainer = ({ location, match }) => {
 
   const owner = vendor ? vendor.userId === parseInt(userid) : false;
   console.log(`owner => ${owner}`);
+  // eslint-disable-next-line no-unused-vars
   const [lng, setLng] = useState("126.988205");
+  // eslint-disable-next-line no-unused-vars
   const [lat, setLat] = useState("37.551229");
   const [viewType, setViewType] = useState("merchandise");
 
@@ -65,10 +62,12 @@ const VendorMapContainer = ({ location, match }) => {
   useEffect(() => {
     dispatch(listVendor());
     if (domain) dispatch(getByVendordomain(domain));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   useEffect(() => {
     return dispatch(initializeVendorListAndVisit());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

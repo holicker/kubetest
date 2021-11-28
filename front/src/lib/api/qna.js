@@ -8,7 +8,6 @@ axios.defaults.baseURL = `${process.env.REACT_APP_QNA}`;
 const qna_client = axios.create();
 
 export const writeQna = ({ vendorid, title, body, writer }) => {
-  console.log(`vendorid : ${vendorid}`);
   return qna_client.post(`/qna/register`, { vendorId: vendorid, title, body, writer }); // 이렇게 된 경우에는 return을 꼭 넣어줘야 한다!!
 };
 

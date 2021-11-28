@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { BasicDiv } from "../components/common/BasicDiv";
 import { BasicItem } from "../components/common/BasicItem";
 import DetailMerchandiseMapContainer from "../containers/map/merchandise/DetailMerchandiseMapContainer";
-import TransactionActionButtonContainer from "../containers/map/merchandise/TransactionActionButtonContainer";
 const ViewMerchandisePageBlock = styled(BasicDiv)`
   margin: 0px 0px;
   background-color: ${OpenColor.gray[2]};

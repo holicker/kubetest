@@ -3,7 +3,6 @@ import React from "react";
 import styled from "styled-components";
 import { BasicDiv } from "../components/common/BasicDiv";
 import { BasicItem } from "../components/common/BasicItem";
-import ViewQnaMapContainer from "../containers/map/qna/ViewQnaMapContainer";
 import ViewNoticeContainer from "../containers/notice/ViewNoticeContainer";
 const ViewNoticePageBlock = styled(BasicDiv)`
   margin: 0px 0px;

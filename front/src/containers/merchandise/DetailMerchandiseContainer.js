@@ -1,20 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router";
-import DetailMerchandise from "../../../components/map/merchandise/DetailMerchandise";
-import { setOriginalMerchandise } from "../../../modules/write";
 import MerchandiseActionButton from "../../../components/common/MerchandiseActionButton";
+import DetailMerchandise from "../../../components/map/merchandise/DetailMerchandise";
 import { deleteMerchandise } from "../../../lib/api/merchandise";
 import {
   readMerchandise,
-  unloadMerchandise,
+  unloadMerchandise
 } from "../../../modules/merchandise";
+import { setOriginalMerchandise } from "../../../modules/write";
 
 const DetailMerchandiseContainer = ({ match, history }) => {
-  console.log(`Detail merchandise Match : ${JSON.stringify(match)}`);
-  console.log(`Detail merchandise Match : ${JSON.stringify(match.params)}`);
   const { merchandiseid: id } = match.params;
-  console.log(`Detail merchandise id : ${id}`);
   const dispatch = useDispatch();
   const { merchandise, error, loading } = useSelector(
     ({ merchandise, loading, user }) => ({

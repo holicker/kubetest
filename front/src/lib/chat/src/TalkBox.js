@@ -9,7 +9,6 @@ import OpenColor from "open-color";
 
 const similarity = require("similarity");
 const htmlId = require("react-html-id");
-const isBlank = require("is-blank");
 
 const TalkBoxBlock = styled.div`
   display: flex;

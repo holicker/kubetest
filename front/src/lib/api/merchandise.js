@@ -10,12 +10,10 @@ export const writeMerchandise = (formData) => {
       "Content-Type": "multipart/form-data",
     },
   };
-  console.log(formData);
   return merchandise_client.post(`/vendor/register`, formData, config); // 이렇게 된 경우에는 return을 꼭 넣어줘야 한다!!
 };
 
 export const readMerchandise = (id) => {
-  console.log(`readMerchandise id : ${id}`);
   return merchandise_client.get(`/vendor/merchandise/${id}`);
 };
 

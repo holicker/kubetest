@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "../../components/layout/Navbar";
-import { changeKeyword } from "../../modules/search";
-import { getByUserid, getByVendorid } from "../../modules/vendor";
 import { withRouter } from "react-router";
+import Navbar from "../../components/layout/Navbar";
 import AskMakeModal from "../../components/vendor/AskMakeModal";
-import { initializeVendor } from "../../modules/vendor";
+import { changeKeyword } from "../../modules/search";
 
 const NavbarContainer = ({ history, location }) => {
-  const { keyword, userid, vendorid, vendordomain, vendorError } = useSelector(
+  const { keyword, vendorid, vendordomain } = useSelector(
     ({ search, user, vendor }) => ({
       keyword: search.keyword,
-      userid: user.id,
       vendorid: vendor.vendorid,
       vendordomain: vendor.vendordomain,
-      vendorError: vendor.vendorError,
     })
   );
 
