@@ -34,6 +34,8 @@ spec:
     - match:
         - uri:
             prefix: /app/auth
+      rewrite:
+        uri: /
       route:
         - destination:
             host: auth
@@ -52,6 +54,8 @@ spec:
     - match:
         - uri:
             prefix: /app/chat
+      rewrite:
+        uri: /
       route:
         - destination:
             host: chat-service
@@ -60,6 +64,8 @@ spec:
     - match:
         - uri:
             prefix: /app/notice
+      rewrite:
+        uri: /
       route:
         - destination:
             host: notice
@@ -68,6 +74,8 @@ spec:
     - match:
         - uri:
             prefix: /app/qna
+      rewrite:
+        uri: /
       route:
         - destination:
             host: qna
@@ -76,6 +84,8 @@ spec:
     - match:
         - uri:
             prefix: /app/review
+      rewrite:
+        uri: /
       route:
         - destination:
             host: review
