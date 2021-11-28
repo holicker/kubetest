@@ -7,8 +7,9 @@ metadata:
     service: front
 spec:
   ports:
-    - port: 3000
+    - port: 443
       name: http
+      targetPort: 3000
   selector:
     app: front
 ---
@@ -51,8 +52,6 @@ spec:
           env:
             - name: REACT_APP_AUTH
               value: https://www.streetvendor.co.kr/app/auth
-            - name: REACT_APP_CHAT
-              value: https://wss.streetvendor.co.kr
             - name: REACT_APP_NOTICE
               value: https://www.streetvendor.co.kr/app/notice
             - name: REACT_APP_REVIEW
@@ -61,5 +60,7 @@ spec:
               value: https://www.streetvendor.co.kr/app/qna
             - name: REACT_APP_VENDOR
               value: https://www.streetvendor.co.kr/app/vendor
+            - name: REACT_APP_CHAT
+              value: https://wss.streetvendor.co.kr
             - name: REACT_APP_WEBSCOKET
               value: https://wss.streetvendor.co.kr

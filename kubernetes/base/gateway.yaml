@@ -85,7 +85,7 @@ spec:
         - destination:
             host: front
             port:
-              number: 3000
+              number: 443
 
 ---
 apiVersion: networking.istio.io/v1alpha3
