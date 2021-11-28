@@ -50,14 +50,14 @@ spec:
               memory: 350Mi
           env:
             - name: REACT_APP_AUTH
-              value: http://a671ba20a225c4c67957c51993b86944-3fed26574229d91d.elb.ap-northeast-2.amazonaws.com
+              value: https://a671ba20a225c4c67957c51993b86944-3fed26574229d91d.elb.ap-northeast-2.amazonaws.com
             - name: REACT_APP_CHAT
-              value: http://aa603cc7696d144eb946eff6724e35aa-da8a0d177c9355f7.elb.ap-northeast-2.amazonaws.com
+              value: https://aa603cc7696d144eb946eff6724e35aa-da8a0d177c9355f7.elb.ap-northeast-2.amazonaws.com
             - name: REACT_APP_NOTICE
-              value: http://ac10ddb31ac8b4bd9b0b76f9378464a7-0dab6766a4ce89a2.elb.ap-northeast-2.amazonaws.com
+              value: https://ac10ddb31ac8b4bd9b0b76f9378464a7-0dab6766a4ce89a2.elb.ap-northeast-2.amazonaws.com
             - name: REACT_APP_REVIEW
-              value: http://a43268868cb6f45069ef9423eaa18bfc-f983179cf286845a.elb.ap-northeast-2.amazonaws.com
+              value: https://a43268868cb6f45069ef9423eaa18bfc-f983179cf286845a.elb.ap-northeast-2.amazonaws.com
             - name: REACT_APP_QNA
-              value: http://a2f77932382054486ba75472fb110716-831d83203f943c91.elb.ap-northeast-2.amazonaws.com
+              value: https://a2f77932382054486ba75472fb110716-831d83203f943c91.elb.ap-northeast-2.amazonaws.com
             - name: REACT_APP_VENDOR
-              value: http://a6c3d6d4925cf4eea977df7572e7b47c-48a4851089d7e57a.elb.ap-northeast-2.amazonaws.com
+              value: https://a6c3d6d4925cf4eea977df7572e7b47c-48a4851089d7e57a.elb.ap-northeast-2.amazonaws.com
