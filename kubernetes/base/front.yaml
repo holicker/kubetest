@@ -13,8 +13,6 @@ metadata:
     service: front
 spec:
   ports:
-    - port: 3000
-      name: http
     - port: 443
       name: https
       targetPort: 443
