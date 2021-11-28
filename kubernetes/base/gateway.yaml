@@ -27,10 +27,58 @@ metadata:
   name: streetvendor
 spec:
   hosts:
-    - "*"
+    - "*.streetvendor.co.kr"
   gateways:
     - streetvendor-gateway
   http:
+    - match:
+        - uri:
+            prefix: /app/auth
+      route:
+        - destination:
+            host: auth
+            port:
+              number: 80
+    - match:
+        - uri:
+            prefix: /app/vendor
+      route:
+        - destination:
+            host: vendor
+            port:
+              number: 80
+    - match:
+        - uri:
+            prefix: /app/chat
+      route:
+        - destination:
+            host: chat-service
+            port:
+              number: 80
+    - match:
+        - uri:
+            prefix: /app/notice
+      route:
+        - destination:
+            host: notice
+            port:
+              number: 80
+    - match:
+        - uri:
+            prefix: /app/qna
+      route:
+        - destination:
+            host: qna
+            port:
+              number: 80
+    - match:
+        - uri:
+            prefix: /app/review
+      route:
+        - destination:
+            host: review
+            port:
+              number: 80
     - match:
         - uri:
             prefix: /
