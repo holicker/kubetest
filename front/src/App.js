@@ -37,7 +37,7 @@ function App() {
         <NavbarContainer />
         <Content>
           <Switch>
-            <Route component={MapPage} path={"/"} exact />
+            <Route component={MapPage} path={["/", "/main"]} exact />
             <PrivateRoute component={NoticePage} path={"/notice"} />
             <Route component={MapPage} path={["/map/:domain", "/map"]} />
             <Route component={SearchPage} path={"/search"} />

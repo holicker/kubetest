@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 axios.defaults.baseURL = `${process.env.REACT_APP_VENDOR}`;
@@ -26,11 +25,17 @@ export const merchandiseList = ({ vendorid }) => {
 };
 
 export const merchandiseListByDomain = ({ vendordomain }) => {
-  return merchandise_client.get(`/vendor/merchandiseinfobydomain/${vendordomain}`);
+  return merchandise_client.get(
+    `/vendor/merchandiseinfobydomain/${vendordomain}`
+  );
   //return merchandise_client.get(`/merchandise/list?${queryString}`);
 };
 
 export const updateMerchandise = ({ id, title, body, tags }) =>
   merchandise_client.post(`/merchandise/register`, { id, title, body, tags });
 
-export const deleteMerchandise = (id) => merchandise_client.delete(`/merchandise/${id}`);
+export const searchMerchandise = ({ page, keyword }) =>
+  merchandise_client.get(`/vendor/search?keyword=${keyword}&page=${page}`);
+
+export const deleteMerchandise = (id) =>
+  merchandise_client.delete(`/merchandise/${id}`);

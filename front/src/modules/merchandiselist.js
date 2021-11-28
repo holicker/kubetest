@@ -13,6 +13,12 @@ const [
   LIST_MERCHANDISE_BY_DOMAIN_FAILURE,
 ] = createRequestActionTypes("merchandiselist/LIST_MERCHANDISE_BY_DOMAIN");
 
+const [
+  SEARCH_MERCHANDISE,
+  SEARCH_MERCHANDISE_SUCCESS,
+  SEARCH_MERCHANDISE_FAILURE,
+] = createRequestActionTypes("merchandiselist/SEARCH_MERCHANDISE");
+
 export const merchandiseList = createAction(
   LIST_MERCHANDISE,
   ({ vendorid }) => ({
@@ -26,6 +32,14 @@ export const merchandiseListByDomain = createAction(
   })
 );
 
+export const searchMerchandise = createAction(
+  SEARCH_MERCHANDISE,
+  ({ page, keyword }) => ({
+    page,
+    keyword,
+  })
+);
+
 const listMerchandiseSaga = createRequestSaga(
   LIST_MERCHANDISE,
   merchandiseAPI.merchandiseList
@@ -36,9 +50,15 @@ const listMerchandiseByDomainSaga = createRequestSaga(
   merchandiseAPI.merchandiseListByDomain
 );
 
+const searchMerchandiseSaga = createRequestSaga(
+  SEARCH_MERCHANDISE,
+  merchandiseAPI.searchMerchandise
+);
+
 export function* merchandiseListSaga() {
   yield takeLatest(LIST_MERCHANDISE, listMerchandiseSaga);
   yield takeLatest(LIST_MERCHANDISE_BY_DOMAIN, listMerchandiseByDomainSaga);
+  yield takeLatest(SEARCH_MERCHANDISE, searchMerchandiseSaga);
 }
 
 const initialState = {
@@ -53,6 +73,14 @@ const merchandiselist = handleActions(
       merchandiselist,
     }),
     [LIST_MERCHANDISE_FAILURE]: (state, { payload: error }) => ({
+      ...state,
+      error,
+    }),
+    [SEARCH_MERCHANDISE_SUCCESS]: (state, { payload: merchandiselist }) => ({
+      ...state,
+      merchandiselist,
+    }),
+    [SEARCH_MERCHANDISE_FAILURE]: (state, { payload: error }) => ({
       ...state,
       error,
     }),

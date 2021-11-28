@@ -39,7 +39,7 @@ const SearchInput = styled.input`
 
 const SearchBar = ({ history, keyword, onChangeKeyword }) => {
   const onSearchClick = (e) => {
-    history.push(`/search/list?keyword=${keyword}`);
+    history.push(`/search?keyword=${keyword}`);
   };
   return (
     <SearchbarBlock>

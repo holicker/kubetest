@@ -52,7 +52,7 @@ const DropdownButton = styled(BasicLI)`
   font-weight: bold;
   font-size: 1rem;
 `;
-const DropdownBar = ({ onFindMyVendor }) => {
+const DropdownBar = ({ onFindMyVendor, onFindMyVendor2 }) => {
   // 여기 전달할 때에는 항상 {}를 해줘야 한다!! json으로 넘어가는 듯?
   return (
     <DropdownBarBlock>
@@ -66,7 +66,7 @@ const DropdownBar = ({ onFindMyVendor }) => {
           {/* <DropdownButton>
             <LinkButton to={"/manage"}>상점 관리</LinkButton>
           </DropdownButton> */}
-          <DropdownButton>
+          <DropdownButton onClick={onFindMyVendor2}>
             <LinkButton to={"/merchandise"}>물품 관리</LinkButton>
           </DropdownButton>
           <DropdownButton>

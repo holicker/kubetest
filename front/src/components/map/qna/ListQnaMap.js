@@ -122,7 +122,7 @@ const ListQnaMap = ({ qnalist, page, vendorid, vendor, location, owner }) => {
     <ListQnaMapBlock>
       {!formUp && !owner && (
         <ListQnaMapItem>
-          <ListQnaToggle onClick={onToggleClick}>리뷰 작성</ListQnaToggle>
+          <ListQnaToggle onClick={onToggleClick}>문의 작성</ListQnaToggle>
         </ListQnaMapItem>
       )}
       {formUp && !owner && (

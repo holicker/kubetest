@@ -1,17 +1,19 @@
-import OpenColor from "open-color";
 import React from "react";
 import styled from "styled-components";
 import { BasicDiv } from "../common/BasicDiv";
 import { BasicItem } from "../common/BasicItem";
 import { LinkButton } from "../common/LinkButton";
-import qs from "qs";
-
+import OpenColor from "open-color";
 const ListMerchandiseSearchBlock = styled(BasicDiv)`
   margin: 0px 0px;
-  background-color: ${OpenColor.gray[2]};
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  h5 {
+    text-align: center;
+    color: ${OpenColor.gray[7]};
+  }
 `;
 
 const ListMerchandiseSearchItem = styled.div`
@@ -66,23 +68,11 @@ const MerchandiseItem = ({ ...props }) => {
   );
 };
 
-const ListMerchandiseSearch = ({ match, location }) => {
-  const query = qs.parse(location.search, { ignoreQueryPrefix: true });
-  const {keyword} = query;
-  console.log(JSON.stringify(query))
-  console.log({keyword});
+const ListMerchandiseSearch = ({ list }) => {
+  console.log(list);
   return (
     <ListMerchandiseSearchBlock>
-        {keyword}의 검색 결과
-      <MerchandiseItem to={match.url + "/1"}/>
-      <MerchandiseItem to={match.url + "/2"} />
-      <MerchandiseItem to={match.url + "/3"} />
-      <MerchandiseItem to={match.url + "/4"} />
-      <MerchandiseItem to={match.url + "/5"} />
-      <MerchandiseItem to={match.url + "/6"} />
-      <MerchandiseItem to={match.url + "/7"} />
-      <MerchandiseItem to={match.url + "/8"} />
-      <MerchandiseItem to={match.url + "/9"} />
+      <h5>검색 결과가 없습니다.</h5>
     </ListMerchandiseSearchBlock>
   );
 };

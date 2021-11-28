@@ -41,6 +41,15 @@ const NavbarContainer = ({ history, location }) => {
     }
   };
 
+  const onFindMyVendor2 = () => {
+    if (vendorid === -1) {
+      console.log("벤더가 현재 비어있습니다!");
+      setModal(true);
+    } else {
+      history.push(`/merchandise`);
+    }
+  };
+
   const onConfirm = () => {
     setModal(false);
     history.push(`/vendor`);
@@ -55,6 +64,7 @@ const NavbarContainer = ({ history, location }) => {
         keyword={keyword}
         onChangeKeyword={onChangeKeyword}
         onFindMyVendor={onFindMyVendor}
+        onFindMyVendor2={onFindMyVendor2}
       />
       <AskMakeModal visible={modal} onConfirm={onConfirm} onCancel={onCancel} />
     </>

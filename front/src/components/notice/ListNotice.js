@@ -36,7 +36,6 @@ const ListNoticeItem = styled(BasicItem)`
     cursor: pointer;
     border-radius: 10px;
   }
-
 `;
 
 const NoticeItem = ({ notice, onClickLink }) => {
@@ -49,14 +48,14 @@ const NoticeItem = ({ notice, onClickLink }) => {
   );
 };
 
-const ListNotice = ({ noticelist, loading, error, onClickLink }) => {
+const ListNotice = ({ noticelist, loading, error, onClickLink, admin }) => {
   if (error) {
     return <ListNoticeBlock>에러가 발생했습니다.</ListNoticeBlock>;
   }
   return (
     <ListNoticeBlock>
       <ListNoticeItem className="addbutton">
-        <BasicButton to="/notice/write">공지 등록</BasicButton>
+        {admin && <BasicButton to="/notice/write">공지 등록</BasicButton>}
       </ListNoticeItem>
       {!loading && noticelist && (
         <div>
