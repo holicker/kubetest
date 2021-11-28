@@ -17,7 +17,7 @@ spec:
       targetPort: 80
       name: http
     - port: 443
-      targetPort: 443
+      targetPort: 80
       name: https
   selector:
     app: chat
