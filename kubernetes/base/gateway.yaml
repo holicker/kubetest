@@ -41,7 +41,9 @@ spec:
               number: 80
     - match:
         - uri:
-            prefix: /vendor
+            prefix: /app/vendor
+      rewrite:
+        uri: /vendor
       route:
         - destination:
             host: vendor
