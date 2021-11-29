@@ -69,7 +69,6 @@ const MerchandiseItem = ({ ...props }) => {
 };
 
 const ListMerchandiseSearch = ({ list }) => {
-  console.log(list);
   return (
     <ListMerchandiseSearchBlock>
       <h5>검색 결과가 없습니다.</h5>
