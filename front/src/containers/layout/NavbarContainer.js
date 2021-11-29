@@ -20,7 +20,6 @@ const NavbarContainer = ({ history, location }) => {
 
   const onChangeKeyword = (e) => {
     const { value } = e.target;
-    console.log(`value : ${value}`);
     dispatch(
       changeKeyword({
         keyword: value,
@@ -30,7 +29,6 @@ const NavbarContainer = ({ history, location }) => {
 
   const onFindMyVendor = () => {
     if (vendorid === -1) {
-      console.log("벤더가 현재 비어있습니다!");
       setModal(true);
     } else {
       history.push(`/map/${vendordomain}`);
@@ -39,7 +37,6 @@ const NavbarContainer = ({ history, location }) => {
 
   const onFindMyVendor2 = () => {
     if (vendorid === -1) {
-      console.log("벤더가 현재 비어있습니다!");
       setModal(true);
     } else {
       history.push(`/merchandise`);

@@ -28,7 +28,6 @@ const ListNoticeContainer = ({ history, location, match }) => {
     });
     page = page - 1;
     dispatch(list({ username, page }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, location.search]);
   return (
     <ListNotice

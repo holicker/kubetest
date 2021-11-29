@@ -70,7 +70,6 @@ class ChatPage extends React.Component {
         };
         convertedBody.push(jsonMessage);
       });
-      console.log(`convertedBody : ${JSON.stringify(convertedBody)}`);
       this.setState({ messages: convertedBody });
     });
   }

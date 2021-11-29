@@ -5,7 +5,7 @@ import MakeVendorForm from "../../components/vendor/MakeVendorForm";
 import {
   changeVendorField,
   initializeVendor,
-  registerVendor
+  registerVendor,
 } from "../../modules/vendor";
 
 const MakeVendorFormContainer = ({ history, match }) => {
@@ -85,7 +85,6 @@ const MakeVendorFormContainer = ({ history, match }) => {
     if (vendorError) {
       console.log(vendorError);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [history, vendorError, vendorid]);
 
   return (

@@ -53,7 +53,7 @@ const ManagePageItem = styled(BasicItem)`
 `;
 
 const ManagePage = ({ match, history }) => {
-  console.log({ match });
+
   return (
     <ManagePageBlock>
       <ManagePageWrapper>

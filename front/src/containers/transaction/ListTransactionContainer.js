@@ -22,7 +22,6 @@ const ListTransactionContainer = ({ history }) => {
 
   const enterChatting = useCallback(
     (roomid) => {
-      console.log(`roomid : ${roomid}`);
       history.push(`/chat/${roomid}`);
     },
     [history]
@@ -32,7 +31,6 @@ const ListTransactionContainer = ({ history }) => {
     dispatch(listChatBuyer({ id }));
     dispatch(listChatSeller({ id }));
     return dispatch(initializeChatlist());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   return (

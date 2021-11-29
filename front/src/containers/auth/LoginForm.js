@@ -47,16 +47,11 @@ const LoginForm = ({ history }) => {
 
   useEffect(() => {
     if (authError) {
-      console.log("오류 발생");
-      console.log(authError);
       setError("로그인 실패");
       return;
     }
     if (auth) {
-      console.log("로그인 성공");
-      console.log(auth);
       const { access_token } = auth;
-      localStorage.setItem("access_token", access_token);
       dispatch(check({ access_token }));
     }
   }, [auth, authError, dispatch]);
@@ -69,10 +64,8 @@ const LoginForm = ({ history }) => {
         localStorage.setItem("id", JSON.stringify(id));
         localStorage.setItem("nickname", JSON.stringify(nickname));
       } catch (e) {
-        console.log("LocalStorage is not working");
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [history, user]);
 
   useEffect(() => {
@@ -82,10 +75,8 @@ const LoginForm = ({ history }) => {
         localStorage.setItem("vendorid", JSON.stringify(vendorid));
         localStorage.setItem("vendordomain", JSON.stringify(vendordomain));
       } catch (e) {
-        console.log("LocalStorage is not working");
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [history, vendorid]);
 
   return (

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import OpenColor from "open-color";
 import styled from "styled-components";
 import { BasicBlock } from "../common/BasicBlock";

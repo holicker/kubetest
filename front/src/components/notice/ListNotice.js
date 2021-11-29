@@ -40,7 +40,6 @@ const ListNoticeItem = styled(BasicItem)`
 
 const NoticeItem = ({ notice, onClickLink }) => {
   const { id, title, body, registeredDate } = notice;
-  console.log(`onclick : ${onClickLink}`);
   return (
     <ListNoticeItem className="items" onClick={() => onClickLink(id)}>
       <p>{title}</p>

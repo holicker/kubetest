@@ -21,7 +21,6 @@ const ChatPage = ({ match }) => {
 
   useEffect(() => {
     dispatch(infoChat(roomid));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   useEffect(() => {}, []);

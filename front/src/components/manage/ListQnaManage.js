@@ -46,7 +46,6 @@ const QnaItem = ({ onClick }) => {
 
 const ListQnaManage = ({ match, history }) => {
   const ClickMove = (qnaid) => {
-    console.log(qnaid);
     alert(`${qnaid}로 이동합니다.`);
     history.push(match.url + `/${qnaid}`)
   };

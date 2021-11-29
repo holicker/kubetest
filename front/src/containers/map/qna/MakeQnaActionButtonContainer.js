@@ -42,7 +42,6 @@ const MakeQnaActionButtonContainer = ({
       console.log(qnaError);
     }
     return dispatch(initialize());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [qna, qnaError, vendordomain]);
 
   return (

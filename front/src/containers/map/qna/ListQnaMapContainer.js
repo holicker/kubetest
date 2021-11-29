@@ -24,7 +24,6 @@ const ListQnaMapContainer = ({ location, match, history }) => {
     });
     page = page - 1;
     dispatch(list({ username, page }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, location.search]);
   return (
     <ListQnaMap

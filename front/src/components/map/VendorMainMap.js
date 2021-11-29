@@ -16,7 +16,6 @@ const VendorMainMapBlock = styled(BasicDiv)`
 // `;
 
 const VendorMainMap = ({match}) => {
-    console.log(`vendormain : ${match.params}`)
     const {vendorid} = match.params
   return (
     <VendorMainMapBlock>
