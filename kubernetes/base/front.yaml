@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: front
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
     service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:ap-northeast-2:068149769006:certificate/7929495f-7537-4a58-a3a1-905c1abe33b2
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
     service.beta.kubernetes.io/aws-load-balancer-ssl-ports: https
