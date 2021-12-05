@@ -9,7 +9,7 @@ spec:
     - ReadWriteOnce    # 하나의 포드 (또는 인스턴스) 에 의해서만 마운트 될 수 있습니다.
   awsElasticBlockStore:
     fsType: ext4
-    volumeID: vol-0bf4d795c069eeb69
+    volumeID: vol-0401559bbe7b31d81
 
 ---
 
