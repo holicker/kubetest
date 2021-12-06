@@ -38,7 +38,7 @@ function App() {
         <Content>
           <Switch>
             <Route component={MapPage} path={["/", "/main"]} exact />
-            <PrivateRoute component={NoticePage} path={"/notice"} />
+            <Route component={NoticePage} path={"/notice"} />
             <Route component={MapPage} path={["/map/:domain", "/map"]} />
             <Route component={SearchPage} path={"/search"} />
             <Route component={ManagePage} path={"/manage"} />
