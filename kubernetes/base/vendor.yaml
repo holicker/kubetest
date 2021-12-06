@@ -64,7 +64,7 @@ spec:
       volumes:
       - name: ebs-volume
         persistentVolumeClaim:
-          claimName: ebs-pvc-hdd   # 3. my-ebs-pvc라는 이름의 pvc를 사용합니다.
+          claimName: ebs-pvc   # 3. my-ebs-pvc라는 이름의 pvc를 사용합니다.
       - name: config-repo-volume
         configMap:
           name: config-repo
